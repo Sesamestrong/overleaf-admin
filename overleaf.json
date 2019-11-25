@@ -37,7 +37,8 @@
           "projectName":"${projectName}",
           "template":"${template}",
           "_csrf":"${csrf}"
-        }
+        },
+        "followAllRedirects":true
       },
       "json":true,
       "frame":{
