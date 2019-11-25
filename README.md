@@ -8,7 +8,7 @@ PASSWORD=<password of the premium overleaf account>
 ALLOWED_EMAILS=<a javascript regex matching accepted email addresses>
 ```
 
-2. The project starts with ```npm start``.
+2. The project starts with ```npm start```.
 3. Users can create premium overleaf projects with a call to ```<hosted url>/create/:projectName/:email?template=```, where template can be any of the following:
   - ```none``` - No template. This is default.
   - ```example``` - The example project.
