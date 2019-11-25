@@ -31,6 +31,7 @@ app.get("/create/:projectName/:email", async (req, res) => {
         template
     } = req.query;
     if (projectName && email) {
+      if(email.match(process.env.ALLOWED_EMAILS)==null) return res.send({err:"Disallowed email."});
       try{
         const {expires}=await shareWithEmail({projectName,invitee:email,template});
         return res.send({expires});

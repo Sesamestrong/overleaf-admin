@@ -5,7 +5,7 @@ A program that allows a premium account on Overleaf to securely create premium p
 ```
 EMAIL=<email of the premium overleaf account>
 PASSWORD=<password of the premium overleaf account>
-ALLOWED_EMAILS=<domain of the email provider that you require>
+ALLOWED_EMAILS=<a javascript regex matching accepted email addresses>
 ```
 
 2. The project starts with ```npm start``.
