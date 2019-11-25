@@ -1,0 +1,24 @@
+{
+  "name": "overleaf-admin",
+  "version": "1.0.0",
+  "description": "A program that allows a premium account on Overleaf to securely create premium projects for all members of a group",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sesamestrong/overleaf-admin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sesamestrong/overleaf-admin/issues"
+  },
+  "homepage": "https://github.com/sesamestrong/overleaf-admin#readme",
+  "dependencies": {
+    "@sesamestrong/json-scraper": "^1.3.2",
+    "express": "^4.17.1"
+  }
+}
