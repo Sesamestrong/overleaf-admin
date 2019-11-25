@@ -41,7 +41,7 @@ app.get("/create/:projectName/:email", async (req, res) => {
         console.log("ERROR:");
         if(err.jsonData){
         const {invitee,template,csrf,expires}=err.jsonData;
-        console.log("Data:",invitee,template,csrf,project_id,expires);
+        console.log("Data:",invitee,template,csrf,expires);
         }
         console.log("Step index:",err.stepNumber);
         throw err;
