@@ -35,8 +35,8 @@ app.get("/create/:projectName/:email", async (req, res) => {
     if (projectName && email) {
       if(email.match(process.env.ALLOWED_EMAILS)==null) return res.send({err:"Disallowed email."});
       try{
-        const {expires}=await createAndShare({projectName,invitee:email,template});
-        return res.send({expires});
+        const {projectId}=await createAndShare({projectName,invitee:email,template});
+        return res.send({projectId});
       }
       catch(err){
         res.send({err:"I'm not telling what the error is, but rest assured that it's been logged."});

@@ -68,7 +68,7 @@
       "json":true,
       "frame":{
         "invite":{
-          "$expires":"expires"
+          "$projectId":"projectId"
         }
       }
     }
