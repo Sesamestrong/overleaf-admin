@@ -1,0 +1,59 @@
+{
+  "steps":[
+    {
+      "headers":{
+        "uri":"https://www.overleaf.com/login",
+        "jar":"admin"
+      },
+      "frame":{
+        "$csrf":"input[name=\"_csrf\"] @ value"
+      }
+    },
+    {
+      "headers":{
+        "uri":"https://www.overleaf.com/login",
+        "form":{
+          "_csrf":"${csrf}",
+          "email":"${username}",
+          "password":"${password}"
+        },
+        "headers":{
+          "origin":"https://www.overleaf.com"
+        },
+        "jar":"admin",
+        "method":"POST",
+        "followAllRedirects":true
+      },
+      "frame":{
+        "$csrf":"input[name=\"_csrf\"] @ value"
+      }
+    },
+    {
+      "headers":{
+        "uri":"https://www.overleaf.com/project/${project_id}",
+        "jar":"admin"
+      },
+      "frame":{
+        "$csrf":"link[rel=alternate] + script + script < html || [a-zA-Z0-9_-]{36,}"
+      }
+    },
+    {
+      "headers":{
+        "uri":"https://www.overleaf.com/project/${project_id}/invite",
+        "method":"POST",
+        "jar":"admin",
+        "form":{
+          "_csrf":"${csrf}",
+          "email":"${invitee}",
+          "privileges":"readAndWrite"
+        }
+      },
+      "json":true,
+      "frame":{
+        "invite":{
+          "$expires":"expires"
+        }
+      }
+    }
+  ]
+}

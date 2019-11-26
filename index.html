@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Overleaf Admin API</title>
+	<link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+	An API call is
+	<pre>/create/:projectName/:email?template=none</pre>
+	<form name="requestProject" action="#">
+		<input name="projectName"/>
+		<input name="email"/>
+		<input type="button" name="submit"/>
+        </form>
+		<script>
+			document.requestProject.submit.addEventListener("click",(e)=>{
+                fetch("/create/"+encodeURIComponent(e.target.parentElement.projectName)+"/"+encodeURIComponent(e.target.parentElement.email))
+                .then(async res=>{
+                    const json=await res.json();
+                    if(json.err){
+                        alert("Error");
+                        console.log(json.err);
+                    }
+                    if(json.expires)alert("Expires "+expires);
+                });
+                return false;
+            });
+		</script>
+    Also, share by using <pre>/share/:projectId/:email</pre>
