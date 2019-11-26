@@ -16,7 +16,7 @@
         </form>
 		<script>
 			document.requestProject.submit.addEventListener("click",(e)=>{
-                fetch("/create/"+encodeURIComponent(e.target.parentElement.projectName)+"/"+encodeURIComponent(e.target.parentElement.email))
+                fetch("/create/"+encodeURIComponent(e.target.parentElement.projectName.value)+"/"+encodeURIComponent(e.target.parentElement.email.value))
                 .then(async res=>{
                     const json=await res.json();
                     if(json.err){
